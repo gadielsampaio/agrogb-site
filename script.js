@@ -45,6 +45,12 @@ function initMobileMenu() {
   toggle.addEventListener('click', (e) => { e.preventDefault(); openMenu(); });
   close.addEventListener('click', closeMenu);
   backdrop.addEventListener('click', closeMenu);
+
+  menu.querySelectorAll('a, button').forEach((el) => {
+    el.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
 }
 
 // --- 3. ANIMAÇÕES DE SCROLL ---
@@ -157,4 +163,5 @@ window.switchMap = function (location) {
     address.innerHTML = "Rodovia BR-060<br>Bandeirantes - MS";
     setTabState(tabBand, tabAmambai);
   }
+
 };
